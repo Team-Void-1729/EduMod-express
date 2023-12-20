@@ -5,6 +5,7 @@ import dotenv from 'dotenv'
 import cookieParser from "cookie-parser"
 import { CourseRouter } from "./router/courses.route.js"
 import { AuthRouter } from "./router/auth.route.js"
+import { CurriculumRouter } from "./router/curriculum.route.js"
 
 
 const app = express()
@@ -26,6 +27,7 @@ app.use(cookieParser())
 
 app.use('/api/courses', CourseRouter)
 app.use('/api/auth', AuthRouter)
+app.use('/api/curriculum', CurriculumRouter)
 
 
 
