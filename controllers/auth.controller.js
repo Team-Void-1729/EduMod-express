@@ -30,7 +30,7 @@ export async function loginEducator(req, res, next) {
         )
         // console.log(data);
 
-        return res.status(200).json({ token, role: data.roles })
+        return res.status(200).json({ token, name: data.name, role: data.roles })
     }
     catch (err) {
         return res.status(500).json(err)
