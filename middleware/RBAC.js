@@ -1,10 +1,10 @@
-export const restrict = (...role) => {
+export const restrict = (...roles) => {
     return (req, res, next) => {
-        const userRoles = req.user.roles
+        const userRole = req.user.roles;
 
-        if (!userRoles.some((r) => role.includes(r))) {
-            throw new Error('Unauthorized Access')
-        }
+        roles.map((role) => {
+            if (role === userRole) return res.status(401).json({ error: 'Unauthorized' })
+        })
         next()
     }
 }

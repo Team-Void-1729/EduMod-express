@@ -8,7 +8,7 @@ const router = Router()
 
 
 router.route('/details').get(courseController.getAllCourses)
-router.route('/add').post(Auth, restrict(ROLES.Designer, ROLES.Educator), courseController.addCourse)
+router.route('/add').post(Auth, restrict(ROLES.Developer, ROLES.Educator), courseController.addCourse)
 
 
 export { router as CourseRouter }

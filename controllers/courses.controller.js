@@ -17,7 +17,7 @@ export async function addCourse(req, res, next) {
     try {
         const { data } = await courseInstance.post('/add', req.body)
 
-        return data
+        return res.status(201).json(data)
     }
     catch (err) {
         return res.status(500).json(err)

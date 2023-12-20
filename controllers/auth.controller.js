@@ -36,3 +36,37 @@ export async function loginEducator(req, res, next) {
         return res.status(500).json(err)
     }
 }
+
+
+export async function getProfileById(req, res, next) {
+    try {
+        const { data } = await authInstance.get(`/profile/${req.params.id}`)
+
+        return res.status(200).json(data)
+    }
+    catch (err) {
+        return res.status(500).json(err)
+    }
+}
+
+export async function getProfileByIdAndUpdate(req, res, next) {
+    try {
+        const { data } = await authInstance.patch(`/update/${req.params.id}`, req.body)
+
+        return res.status(200).json(data)
+    }
+    catch (err) {
+        return res.status(500).json(err)
+    }
+}
+
+export async function deleteProfileById(req, res, next) {
+    try {
+        const { data } = await authInstance.delete(`/delete/${req.params.id}`)
+
+        return res.status(200).json(data)
+    }
+    catch (err) {
+        return res.status(500).json(err)
+    }
+}

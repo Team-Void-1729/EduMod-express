@@ -1,12 +1,7 @@
-export const role = {
-    type: [String],
-    enum: ['EDUCATORS', 'CURRICULUM_DEVELOPERS', 'ADMINISTRATORS']
-}
-
-// Admin > Designer > Educator
+// Admin > Developer > Educator
 
 export const ROLES = {
-    Educator: 'EDUCATORS',
-    Admin: 'ADMINISTRATORS',
-    Designer: 'CURRICULUM_DEVELOPERS'
+    Educator: 'EDUCATOR',
+    Developer: 'DEVELOPER',
+    Admin: 'ADMINISTRATOR',
 }
