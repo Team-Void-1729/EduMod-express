@@ -1,7 +1,7 @@
 import axios from "axios";
 import jwt from 'jsonwebtoken'
 
-const authInstance = axios.create({ baseURL: 'http://172.16.17.84:3030/educator' })
+const authInstance = axios.create({ baseURL: `${process.env.IPV4}/educator` })
 
 export async function addEducator(req, res, next) {
     try {

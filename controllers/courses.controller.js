@@ -1,6 +1,6 @@
 import axios from "axios"
 
-const courseInstance = axios.create({ baseURL: 'http://172.16.17.84:3030/courses' })
+const courseInstance = axios.create({ baseURL: `${process.env.IPV4}/courses` })
 
 export async function getAllCourses(req, res, next) {
     try {

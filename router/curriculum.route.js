@@ -7,7 +7,9 @@ import { ROLES } from "../entities/role.js"
 const router = Router()
 
 
-router.route('/details').get()
+router.route('/create').post(Auth, restrict(ROLES.Developer, ROLES.Educator), curriculumController.createCurriculum)
+router.route('/add').post()
+router.route('/details/:id').get()
 
 
 export { router as CurriculumRouter }

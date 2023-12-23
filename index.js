@@ -32,6 +32,6 @@ app.use('/api/curriculum', CurriculumRouter)
 
 
 const port = process.env.PORT || 5000
-app.listen(port, '172.16.17.84', () => {
+app.listen(port, process.env.IPV4, () => {
     console.log(`Server port: ${port}`)
 })
