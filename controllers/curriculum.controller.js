@@ -1,6 +1,9 @@
 import axios from "axios"
+import dotenv from 'dotenv'
 
-const curriculumInstance = axios.create({ baseURL: 'http://172.16.17.84:3030/curriculum' })
+dotenv.config()
+
+const curriculumInstance = axios.create({ baseURL: `${process.env.SPRINGBOOT_SERVER}/curriculum` })
 
 export async function createCurriculum(req, res, next) {
     try {

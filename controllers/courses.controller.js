@@ -1,6 +1,9 @@
 import axios from "axios"
+import dotenv from 'dotenv'
 
-const courseInstance = axios.create({ baseURL: `${process.env.IPV4}/courses` })
+dotenv.config()
+
+const courseInstance = axios.create({ baseURL: `${process.env.SPRINGBOOT_SERVER}/courses` })
 
 export async function getAllCourses(req, res, next) {
     try {

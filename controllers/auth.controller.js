@@ -1,7 +1,10 @@
 import axios from "axios";
 import jwt from 'jsonwebtoken'
+import dotenv from 'dotenv'
 
-const authInstance = axios.create({ baseURL: `${process.env.IPV4}/educator` })
+dotenv.config()
+
+const authInstance = axios.create({ baseURL: `${process.env.SPRINGBOOT_SERVER}/educator` })
 
 export async function addEducator(req, res, next) {
     try {
@@ -28,7 +31,6 @@ export async function loginEducator(req, res, next) {
             process.env.JWT_SECRET,
             { expiresIn: '24h' }
         )
-        // console.log(data);
 
         return res.status(200).json({ token, name: data.name, role: data.roles })
     }

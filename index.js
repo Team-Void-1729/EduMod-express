@@ -7,7 +7,6 @@ import { CourseRouter } from "./router/courses.route.js"
 import { AuthRouter } from "./router/auth.route.js"
 import { CurriculumRouter } from "./router/curriculum.route.js"
 
-
 const app = express()
 
 dotenv.config()
@@ -24,11 +23,9 @@ app.disable('x-powered-by')
 app.use(cookieParser())
 
 
-
-app.use('/api/courses', CourseRouter)
 app.use('/api/auth', AuthRouter)
+app.use('/api/courses', CourseRouter)
 app.use('/api/curriculum', CurriculumRouter)
-
 
 
 const port = process.env.PORT || 5000
